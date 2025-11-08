@@ -293,7 +293,7 @@ const Main: FC<IMainProps> = () => {
   }, [])
 
   const [isResponding, { setTrue: setRespondingTrue, setFalse: setRespondingFalse }] = useBoolean(false)
-  const [_abortController, setAbortController] = useState<AbortController | null>(null)
+  const [abortController, setAbortController] = useState<AbortController | null>(null)
   const { notify } = Toast
   const logError = (message: string) => {
     notify({ type: 'error', message })
@@ -315,12 +315,12 @@ const Main: FC<IMainProps> = () => {
     return true
   }
 
-  const [_controlFocus, _setControlFocus] = useState(0)
-  const [_openingSuggestedQuestions, _setOpeningSuggestedQuestions] = useState<string[]>([])
-  const [_messageTaskId, setMessageTaskId] = useState('')
-  const [_hasStopResponded, _setHasStopResponded, _getHasStopResponded] = useGetState(false)
-  const [_isRespondingConIsCurrCon, setIsRespondingConCurrCon, getIsRespondingConIsCurrCon] = useGetState(true)
-  const [_userQuery, _setUserQuery] = useState('')
+  const [controlFocus, setControlFocus] = useState(0)
+  const [openingSuggestedQuestions, setOpeningSuggestedQuestions] = useState<string[]>([])
+  const [messageTaskId, setMessageTaskId] = useState('')
+  const [hasStopResponded, setHasStopResponded, getHasStopResponded] = useGetState(false)
+  const [isRespondingConIsCurrCon, setIsRespondingConCurrCon, getIsRespondingConIsCurrCon] = useGetState(true)
+  const [userQuery, setUserQuery] = useState('')
 
   const updateCurrentQA = ({
     responseItem,
