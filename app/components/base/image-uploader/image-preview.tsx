@@ -5,7 +5,6 @@ import XClose from '@/app/components/base/icons/line/x-close'
 interface ImagePreviewProps {
   url: string
   onCancel: () => void
-  title?: string
 }
 const ImagePreview: FC<ImagePreviewProps> = ({
   url,
